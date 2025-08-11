@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    @if (!String.IsNullOrEmpty(ViewBag.Message))
+    {
+        <strong>@ViewBag.Message</strong>
+    }
+    else
+    {
+<h1>Welcome to the Social Club Membership Portal</h1>
+<p class="lead">
+    Why? Just because.At TUKS, you can join exciting social clubs!!!
+    Use this portal to register, update your details, or cancel your membership.
+</p>
+    }
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Insert</h2>
+        <p>
+            When this button is clicked, a member's info will be inserted into the database.
+        </p>
+        <p>@Html.ActionLink("Generate new", "Insert", "Home", new { area = "" }, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Update</h2>
+        <p>
+            When this button is clicked, a member's existing info in the database will be replaced with other info.
+        </p>
+        <p>@Html.ActionLink("Update", "Update", "Home", new { area = "" }, new { @class = "btn btn-warning" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Delete</h2>
+        <p>
+            When this button is clicked, a member's info from the database will be deleted.
+        </p>
+        <p>@Html.ActionLink("Delete", "Delete", "Home", new { area = "" }, new { @class = "btn btn-danger" })</p>
+    </div>
+</div>
